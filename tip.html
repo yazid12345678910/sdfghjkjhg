@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<title>2.4.1 Tipos de Control de Flujo</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor{
+    max-width: 1000px;
+    background: rgba(255,255,255,0.97);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: justify;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+h1, h2, h3{
+    background: linear-gradient(90deg, #003366, #0056b3);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+p{
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 12px;
+}
+ul{
+    margin-left: 20px;
+}
+a{
+    color: #0056b3;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.footer-buttons{
+    margin-top: 30px;
+    text-align: center;
+}
+.footer-buttons button{
+    width: 60%;
+    padding: 12px;
+    background: linear-gradient(90deg, #8b0000, #ff0000);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.footer-buttons button:hover{
+    background: linear-gradient(90deg, #ff0000, #ff6b6b);
+}
+</style>
+</head>
+
+<body>
+<div class="contenedor">
+
+<h1>2.4.1 Tipos: Asentimiento y Ventanas Deslizantes</h1>
+
+<h2>Asentimiento (Parada y Espera)</h2>
+
+<p>
+El <strong>asentimiento</strong>, también conocido como protocolo de <strong>parada y espera</strong>,
+es uno de los métodos más simples para el control de flujo. Su objetivo principal es evitar
+la saturación del receptor.
+</p>
+
+<p>
+En este método, el emisor envía una sola trama y se detiene hasta recibir un
+<strong>acuse de recibo (ACK)</strong> por parte del receptor. Solo después de recibir dicha
+confirmación, el emisor puede enviar la siguiente trama.
+</p>
+
+<p>
+Este procedimiento es adecuado cuando se transmiten pocas tramas de gran tamaño.
+Sin embargo, resulta poco eficiente cuando se transmiten tramas cortas, ya que el
+tiempo de espera reduce el rendimiento del sistema.
+</p>
+
+<h3>Eficiencia del Asentimiento</h3>
+
+<p>
+La eficiencia se define como la proporción entre el tiempo utilizado para transmitir
+información útil y el tiempo total del proceso. Se calcula considerando el tamaño de la
+trama y la velocidad de transmisión del emisor.
+</p>
+
+<ul>
+    <li>Sencillo de implementar.</li>
+    <li>Alta confiabilidad.</li>
+    <li>Bajo aprovechamiento del canal.</li>
+</ul>
+
+<h2>Ventanas Deslizantes</h2>
+
+<p>
+El mecanismo de <strong>ventana deslizante</strong> es un método más eficiente y ampliamente
+utilizado en redes de comunicación. Permite que el emisor envíe varias tramas sin esperar
+inmediatamente una confirmación.
+</p>
+
+<p>
+La ventana define cuántas tramas pueden estar pendientes de confirmación al mismo tiempo.
+Su tamaño depende de la capacidad del buffer del receptor y del número de secuencia
+utilizado para numerar las tramas.
+</p>
+
+<p>
+Por ejemplo, si se utilizan 3 bits para numerar tramas (módulo 8), el tamaño máximo de la
+ventana será de 7 tramas (<strong>2<sup>k</sup> − 1</strong>). Con 7 bits de numeración, se podrían
+enviar hasta 127 tramas sin recibir un ACK.
+</p>
+
+<h3>Ventajas de la Ventana Deslizante</h3>
+
+<ul>
+    <li>Mayor eficiencia en el uso del canal.</li>
+    <li>Reduce el tiempo de espera.</li>
+    <li>Mejor rendimiento en enlaces de alta velocidad.</li>
+</ul>
+
+<h2>Control de Flujo por Hardware</h2>
+
+<p>
+El <strong>control por hardware</strong> utiliza líneas físicas adicionales para gestionar el
+flujo de datos. Un ejemplo común es la interfaz <strong>RS-232-C</strong>, que emplea señales
+eléctricas para indicar si el receptor está listo para recibir información.
+</p>
+
+<p>
+Estas líneas funcionan como un semáforo: permiten o detienen la transmisión dependiendo
+del estado del dispositivo receptor. En comunicaciones bidireccionales se requieren
+al menos dos líneas de control.
+</p>
+
+<ul>
+    <li>Alta confiabilidad.</li>
+    <li>Dependiente del medio físico.</li>
+    <li>Requiere cables adicionales.</li>
+</ul>
+
+<h2>Control de Flujo por Software</h2>
+
+<p>
+El <strong>control por software</strong> se basa en el envío de caracteres de control o información
+incluida en las tramas para indicar el estado del receptor.
+</p>
+
+<p>
+Este método ofrece mayor flexibilidad e independencia del medio físico. Un ejemplo común
+es el uso de protocolos como <strong>XON/XOFF</strong> o el envío de confirmaciones (ACK) antes
+de continuar con la transmisión.
+</p>
+
+<ul>
+    <li>Mayor versatilidad.</li>
+    <li>No depende de líneas físicas adicionales.</li>
+    <li>Más adecuado para redes modernas.</li>
+</ul>
+
+<h2>Fuente de Consulta</h2>
+
+<p>
+Información basada en la siguiente fuente académica confiable:
+<br>
+<a href="https://sites.google.com/view/telecom-project-5isc12/medios-de-transmisi%C3%B3n/2-4-1-tipos-asentimiento-ventanas-deslizantes-por-hardware-o-software-d"
+target="_blank">
+Tipos de Control de Flujo – Proyecto Telecomunicaciones
+</a>
+</p>
+
+<div class="footer-buttons">
+    <button onclick="location.href='medio.html'">
+        Regresar al Menu de Medios
+    </button>
+</div>
+
+</div>
+</body>
+</html>

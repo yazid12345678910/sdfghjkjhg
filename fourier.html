@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<title>1.4.1 Serie de Fourier</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contenedor{
+    max-width: 850px;
+    background: rgba(255,255,255,0.95);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: justify;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+h1, h2{
+    background: linear-gradient(90deg, #003366, #0056b3);
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+}
+p{
+    font-size: 15px;
+    line-height: 1.7;
+}
+.imagen{
+    display: block;
+    margin: 20px auto;
+    max-width: 95%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+a{
+    color: #0056b3;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.footer-buttons{
+    margin-top: 30px;
+    text-align: center;
+}
+.footer-buttons button{
+    width: 60%;
+    padding: 12px;
+    background: linear-gradient(90deg, #8b0000, #ff0000);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.footer-buttons button:hover{
+    background: linear-gradient(90deg, #ff0000, #ff6b6b);
+}
+</style>
+</head>
+
+<body>
+<div class="contenedor">
+
+<h1>1.4.1 Serie de Fourier</h1>
+
+<p>
+La Serie de Fourier es una herramienta matemática fundamental en el análisis de señales y sistemas,
+especialmente en el área de las telecomunicaciones. Permite representar una señal periódica como
+la suma de señales sinusoidales simples, es decir, senos y cosenos de diferentes frecuencias,
+amplitudes y fases. Gracias a este método, es posible analizar señales complejas descomponiéndolas
+en componentes más simples, lo cual facilita su estudio y procesamiento.
+</p>
+
+<h2>Origen y concepto básico</h2>
+<p>
+La Serie de Fourier fue desarrollada por el matemático francés Jean-Baptiste Joseph Fourier,
+quien demostró que cualquier señal periódica puede expresarse como una suma infinita de funciones
+sinusoidales. Este descubrimiento revolucionó el análisis de fenómenos físicos y sentó las bases
+del procesamiento moderno de señales. En telecomunicaciones, esta descomposición es esencial para
+entender cómo se comportan las señales en el dominio de la frecuencia.
+</p>
+
+<h2>Representación matemática</h2>
+<p>
+Desde el punto de vista matemático, una señal periódica f(t) puede expresarse como la suma de
+términos senoidales y cosenoidales. Cada uno de estos términos representa una frecuencia específica
+que contribuye a la forma total de la señal. La Serie de Fourier permite identificar la frecuencia
+fundamental de una señal y sus armónicos, los cuales influyen directamente en la calidad y forma
+de la transmisión de la información.
+</p>
+
+<h2>Interpretación física</h2>
+<p>
+En términos físicos, la Serie de Fourier permite comprender que una señal compleja no es más que
+la combinación de múltiples señales simples. Por ejemplo, una señal cuadrada puede descomponerse
+en una suma de ondas senoidales con frecuencias múltiples de la frecuencia fundamental. Esta
+interpretación es clave para analizar sistemas reales, ya que muchos dispositivos electrónicos
+responden de manera distinta a cada componente de frecuencia.
+</p>
+
+<h2>Importancia en telecomunicaciones</h2>
+<p>
+En los sistemas de telecomunicaciones, la Serie de Fourier se utiliza para analizar el ancho de
+banda de una señal, diseñar filtros, eliminar ruido y optimizar la transmisión de información.
+Gracias a esta herramienta, los ingenieros pueden estudiar cómo una señal se verá afectada al
+pasar por un canal de transmisión y cómo recuperar la información original en el receptor. También
+es fundamental en tecnologías como radio, televisión, telefonía móvil e Internet.
+</p>
+
+<h2>Aplicaciones prácticas</h2>
+<p>
+La Serie de Fourier tiene múltiples aplicaciones prácticas, como el análisis de señales de audio,
+el procesamiento de imágenes, la modulación de señales y el diseño de sistemas electrónicos.
+En la vida cotidiana, se aplica en la compresión de audio y video, en sistemas de comunicación
+inalámbrica y en el análisis de vibraciones y señales biomédicas. Su uso permite transformar una
+señal del dominio del tiempo al dominio de la frecuencia, facilitando su estudio y manipulación.
+</p>
+
+<h2>Relación con otros conceptos</h2>
+<p>
+La Serie de Fourier está estrechamente relacionada con otros conceptos importantes como la
+Transformada de Fourier, la Transformada Rápida de Fourier (FFT) y el análisis espectral. Estos
+métodos son extensiones de la Serie de Fourier y se utilizan cuando se trabaja con señales no
+periódicas o con grandes volúmenes de datos. En conjunto, estas herramientas forman la base del
+procesamiento digital de señales.
+</p>
+
+<div class="footer-buttons">
+    <button onclick="location.href='sistema_comunicacion.html'">
+        Regresar al Menu de Sistema de comunicación
+    </button>
+</div>
+
+</div>
+</body>
+</html>

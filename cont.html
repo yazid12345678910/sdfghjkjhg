@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<title>2.4 Control de Flujo</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor{
+    max-width: 1000px;
+    background: rgba(255,255,255,0.97);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: justify;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+h1, h2, h3{
+    background: linear-gradient(90deg, #003366, #0056b3);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+p{
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 12px;
+}
+ul{
+    margin-left: 20px;
+}
+a{
+    color: #0056b3;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.footer-buttons{
+    margin-top: 30px;
+    text-align: center;
+}
+.footer-buttons button{
+    width: 60%;
+    padding: 12px;
+    background: linear-gradient(90deg, #8b0000, #ff0000);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.footer-buttons button:hover{
+    background: linear-gradient(90deg, #ff0000, #ff6b6b);
+}
+</style>
+</head>
+
+<body>
+<div class="contenedor">
+
+<h1>2.4 Control de Flujo</h1>
+
+<p>
+El <strong>control de flujo</strong> es un mecanismo esencial en los sistemas de telecomunicaciones
+y redes de datos, cuyo propósito es regular la cantidad de información que el emisor puede
+enviar al receptor, evitando que este último se vea saturado. Su objetivo principal es asegurar
+que la transmisión de datos sea ordenada, eficiente y confiable.
+</p>
+
+<p>
+En una comunicación sin control de flujo, el receptor podría recibir más información de la que
+puede procesar, provocando pérdida de datos, errores y retransmisiones innecesarias.
+</p>
+
+<h2>Mecanismo de Ventana Deslizante</h2>
+
+<p>
+Uno de los métodos más utilizados para implementar el control de flujo es el
+<strong>mecanismo de ventana deslizante</strong>. Este método permite que el emisor envíe varias
+tramas antes de recibir una confirmación por parte del receptor, aumentando el rendimiento
+del sistema de comunicación.
+</p>
+
+<h3>Características principales</h3>
+
+<ul>
+    <li>El emisor puede enviar varias tramas antes de recibir una confirmación (ACK).</li>
+    <li>La ventana deslizante tiene un tamaño fijo de <strong>“n”</strong> celdas numeradas (1…n).</li>
+    <li>Se pueden enviar hasta <strong>n tramas</strong> antes de recibir una confirmación.</li>
+    <li>Un ACK contiene el número de la última trama recibida correctamente.</li>
+</ul>
+
+<p>
+Cuando el receptor confirma la recepción correcta de las tramas, la ventana se desplaza,
+permitiendo el envío de nuevas tramas. Este proceso optimiza el uso del canal de transmisión
+y reduce los tiempos de espera.
+</p>
+
+<h2>Control de Flujo por Software</h2>
+
+<p>
+El <strong>control de flujo por software</strong> se basa en el intercambio de información adicional
+entre el emisor y el receptor para indicar el estado del proceso de recepción. Este método
+utiliza caracteres de control o campos especiales dentro de las tramas de datos.
+</p>
+
+<p>
+Mediante este mecanismo, el receptor puede indicar si está listo para recibir más información
+o si necesita que el emisor detenga temporalmente la transmisión. De esta forma, se evita la
+saturación del receptor y se mantiene la integridad de los datos.
+</p>
+
+<h3>Ventajas del control de flujo</h3>
+
+<ul>
+    <li>Evita la pérdida de datos.</li>
+    <li>Optimiza el uso del canal de comunicación.</li>
+    <li>Reduce errores y retransmisiones.</li>
+    <li>Permite una comunicación más estable y eficiente.</li>
+</ul>
+
+<h2>Recurso en video</h2>
+
+<p>
+Video complementario sobre el control de flujo en telecomunicaciones:  
+<a href="https://www.bing.com/videos/riverview/relatedvideo?q=2.4+Control+de+flujo.+pdf+en+telecomuniciones&&view=riverview&mmscn=mtsc&mid=C6A34A291B340322B8CFC6A34A291B340322B8CF&&aps=0&FORM=VMSOVR"
+target="_blank">
+Control de flujo en telecomunicaciones
+</a>
+</p>
+
+<h2>Fuente de consulta</h2>
+
+<p>
+Información basada en la siguiente fuente académica:  
+<a href="https://idoc.pub/documents/24-control-de-flujo-546g60qwexn8"
+target="_blank">
+2.4 Control de Flujo – IDOC
+</a>
+</p>
+
+
+<p>
+<strong>Instituto:</strong> Instituto Tecnológico Superior de Tamazunchale<br>
+<strong>Carrera:</strong> Ingeniería en Sistemas Computacionales<br>
+<strong>Materia:</strong> Fundamentos de Telecomunicaciones<br>
+<strong>Unidad:</strong> II<br>
+<strong>Tema:</strong> 2.4 Control de Flujo<br>
+<strong>Catedrático:</strong> Ing. Luigi Alan Cruz Ponce<br>
+<strong>Grupo:</strong> M1 &nbsp; | &nbsp; <strong>Semestre:</strong> 5° &nbsp; | &nbsp; <strong>Turno:</strong> Matutino
+</p>
+
+<p>
+<strong>Integrantes del equipo:</strong><br>
+• Ana Karen Hernández Cruz<br>
+• Tania Hernández Martínez<br>
+• Adriana Morales Antonio<br>
+• César Manuel Reyes<br>
+• Gerardo Reyes Chavero
+</p>
+
+<div class="footer-buttons">
+    <button onclick="location.href='medio.html'">
+        Regresar al Menu de Medios
+    </button>
+</div>
+
+</div>
+</body>
+</html>

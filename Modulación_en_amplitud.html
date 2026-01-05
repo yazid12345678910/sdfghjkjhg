@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<title>3.1.1 Modulación AM y FM</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor{
+    max-width: 1050px;
+    background: rgba(255,255,255,0.97);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: justify;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+h1, h2, h3{
+    background: linear-gradient(90deg, #003366, #0056b3);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+p{
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 12px;
+}
+ul{
+    margin-left: 25px;
+}
+img{
+    display: block;
+    margin: 20px auto;
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+a{
+    color: #0056b3;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.footer-buttons{
+    margin-top: 30px;
+    text-align: center;
+}
+.footer-buttons button{
+    width: 60%;
+    padding: 12px;
+    background: linear-gradient(90deg, #8b0000, #ff0000);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.footer-buttons button:hover{
+    background: linear-gradient(90deg, #ff0000, #ff6b6b);
+}
+</style>
+</head>
+
+<body>
+<div class="contenedor">
+
+<h1>3.1.1 Modulación en Amplitud (AM) y Modulación en Frecuencia (FM)</h1>
+
+<h2>Introducción</h2>
+
+<p>
+Las señales de información, como la voz o la música, no pueden transmitirse de forma directa a grandes
+distancias debido a las limitaciones del canal de transmisión. Por esta razón, se utiliza la
+<strong>modulación</strong>, que consiste en transformar una señal de información en otra forma más adecuada
+para su transmisión mediante una señal de alta frecuencia llamada <strong>portadora</strong>.
+</p>
+
+<p>
+La modulación se realiza en el transmisor mediante un circuito llamado <strong>modulador</strong>, mientras que
+en el receptor se lleva a cabo el proceso inverso llamado <strong>demodulación</strong>, usando un
+<strong>demodulador</strong> o detector.
+</p>
+
+<h2>Finalidad de la modulación</h2>
+
+<p>
+El objetivo principal de la modulación es adaptar la señal en banda base <strong>m(t)</strong> al canal de
+transmisión, permitiendo:
+</p>
+
+<ul>
+    <li>Transmisión eficiente a largas distancias.</li>
+    <li>Mejor aprovechamiento del ancho de banda del canal.</li>
+    <li>Reducción de interferencias entre señales.</li>
+    <li>Multiplexación de múltiples señales en un mismo medio.</li>
+</ul>
+
+<h3>Cadena básica de transmisión</h3>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Communication_system.png"
+alt="Cadena de comunicación con modulación">
+
+<p>
+<strong>Explicación del diagrama:</strong>  
+La fuente genera la señal de información m(t), el modulador la adapta a una señal portadora s(t),
+el canal introduce perturbaciones (ruido), y el demodulador recupera la señal y(t) en el receptor.
+</p>
+
+<h2>Modulación en Amplitud (AM)</h2>
+
+<p>
+La <strong>modulación en amplitud (AM)</strong> consiste en variar la amplitud de una portadora de alta
+frecuencia de acuerdo con la amplitud instantánea de la señal de información, mientras que la
+frecuencia de la portadora permanece constante.
+</p>
+
+<p>
+En este tipo de modulación, la información se encuentra contenida en la <strong>envolvente</strong> de la señal
+modulada, la cual tiene la misma forma que la señal modulante original.
+</p>
+
+<h3>Características principales de AM</h3>
+
+<ul>
+    <li>Modificación de la amplitud de la portadora.</li>
+    <li>Sensible al ruido.</li>
+    <li>Bajo costo y fácil implementación.</li>
+    <li>Utilizada en radiodifusión AM y comunicaciones aeronáuticas.</li>
+</ul>
+
+<h3>Envolvente de una señal AM</h3>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Amfm3-en-de.gif"
+alt="Envolvente de señal AM">
+
+<p>
+<strong>Explicación:</strong>  
+La envolvente representa la señal de información. Al unir los picos de la señal modulada,
+se obtiene una forma idéntica a la señal modulante original.
+</p>
+
+<h3>Espectro de frecuencia de AM</h3>
+
+<p>
+Una señal AM genera dos bandas laterales:
+</p>
+
+<ul>
+    <li><strong>Banda lateral superior (USB):</strong> fc + fm</li>
+    <li><strong>Banda lateral inferior (LSB):</strong> fc − fm</li>
+</ul>
+
+<p>
+El ancho de banda de AM se define como:
+</p>
+
+<p><strong>B = 2 · fm(max)</strong></p>
+
+<h2>Modulación en Frecuencia (FM)</h2>
+
+<p>
+La <strong>modulación en frecuencia (FM)</strong> consiste en variar la frecuencia de la portadora de acuerdo
+con la señal modulante, manteniendo constante la amplitud de la portadora.
+</p>
+
+<p>
+Este tipo de modulación ofrece mayor inmunidad al ruido y mejor calidad de audio que la AM, por lo
+que es ampliamente utilizada en radiodifusión FM.
+</p>
+
+<h3>Características principales de FM</h3>
+
+<ul>
+    <li>Mayor resistencia al ruido.</li>
+    <li>Mejor calidad de audio.</li>
+    <li>Mayor ancho de banda requerido.</li>
+</ul>
+
+<h3>Comparación AM vs FM</h3>
+
+<ul>
+    <li><strong>AM:</strong> menor calidad, menor ancho de banda, más ruido.</li>
+    <li><strong>FM:</strong> mejor calidad, mayor ancho de banda, menos ruido.</li>
+</ul>
+
+<h2>Video explicativo</h2>
+
+<p>
+<a href="https://www.bing.com/videos/riverview/relatedvideo?&q=3.1.1+Modulaci%C3%B3n+en+amplitud+(AM)+y+modulaci%C3%B3n+en+frecuencia+(FM).+pdf&&mid=3FCC760ACBF01EDC9B173FCC760ACBF01EDC9B17&&FORM=VRDGAR"
+target="_blank">
+Video: Modulación AM y FM – Explicación completa
+</a>
+</p>
+
+
+
+<p>
+<a href="https://www.profesores.frc.utn.edu.ar/electronica/electronicaaplicadaiii/Aplicada/Cap03ModulacionAM1.pdf"
+target="_blank">
+UTN – Modulación en Amplitud (Documento académico)
+</a>
+</p>
+
+<div class="footer-buttons">
+    <button onclick="location.href='modulacion.html'">
+        Regresar al menú modeluacion
+    </button>
+</div>
+
+</div>
+</body>
+</html>

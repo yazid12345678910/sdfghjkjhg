@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<title>2.3 Métodos para la detección y corrección de errores</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor{
+    max-width: 950px;
+    background: rgba(255,255,255,0.97);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: justify;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+h1, h2, h3{
+    background: linear-gradient(90deg, #003366, #0056b3);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+p{
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 12px;
+}
+ul{
+    margin-left: 20px;
+}
+img{
+    display: block;
+    margin: 20px auto;
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+a{
+    color: #0056b3;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.footer-buttons{
+    margin-top: 30px;
+    text-align: center;
+}
+.footer-buttons button{
+    width: 60%;
+    padding: 12px;
+    background: linear-gradient(90deg, #8b0000, #ff0000);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.footer-buttons button:hover{
+    background: linear-gradient(90deg, #ff0000, #ff6b6b);
+}
+</style>
+</head>
+
+<body>
+<div class="contenedor">
+
+<h1>2.3 Métodos para la detección y corrección de errores</h1>
+
+<p>
+En matemáticas, computación y teoría de la información, la detección y corrección de errores es una
+práctica fundamental para garantizar la integridad de los datos durante su transmisión o
+almacenamiento. Estos métodos permiten identificar y, en muchos casos, corregir errores que se
+producen debido a interferencias, ruido o fallas en los medios de comunicación.
+</p>
+
+<p>
+La comunicación entre computadoras implica un flujo constante de información a través de canales
+que no siempre fueron diseñados exclusivamente para transmisión de datos, como líneas telefónicas
+o enlaces inalámbricos. Estos canales pueden introducir ruido externo que provoca errores durante
+la transmisión. Por esta razón, es necesario implementar mecanismos que detecten dichos errores y,
+cuando sea posible, los corrijan.
+</p>
+
+<p>
+Para lograrlo, se añaden a los datos transmitidos bits adicionales conocidos como
+<strong>bits de redundancia</strong>. Estos bits permiten al receptor verificar si los datos llegaron
+correctamente o si fueron alterados durante el proceso de transmisión.
+</p>
+
+<h2>Tipos de errores en la transmisión</h2>
+
+<h3>Error de bit</h3>
+<p>
+El error de bit ocurre cuando un solo bit de una unidad de datos cambia su valor, es decir, pasa
+de 0 a 1 o de 1 a 0. Este tipo de error altera directamente el significado del dato transmitido.
+Aunque es poco frecuente en transmisiones serie debido a la corta duración del intervalo de bit,
+puede presentarse en transmisiones paralelas cuando un cable específico sufre una perturbación.
+</p>
+
+<h3>Error de ráfaga</h3>
+<p>
+El error de ráfaga se produce cuando dos o más bits de una unidad de datos se ven afectados.
+Estos errores no necesariamente ocurren en bits consecutivos; la longitud de la ráfaga se mide
+desde el primer bit alterado hasta el último, aunque algunos bits intermedios pueden ser correctos.
+</p>
+
+<p>
+Los errores de ráfaga son más comunes en transmisiones serie, ya que el ruido suele durar más que
+el tiempo de un solo bit, afectando a un conjunto de bits consecutivos. La cantidad de bits
+afectados depende de la tasa de transmisión y de la duración de la interferencia.
+</p>
+
+<h2>Diagrama de errores en transmisión</h2>
+
+<img src="https://imgv2-1-f.scribdassets.com/img/document/699621812/original/ace656df1a/1?v=1"
+alt="Diagrama de errores de bit y error de ráfaga">
+
+<p>
+<strong>Explicación del diagrama:</strong>  
+La imagen representa visualmente los tipos de errores que pueden ocurrir durante una transmisión
+de datos. En el caso del error de bit, se observa cómo un solo bit cambia su valor original. En el
+error de ráfaga, varios bits consecutivos o cercanos son alterados debido a la presencia de ruido
+prolongado en el canal de comunicación. Este diagrama ayuda a comprender por qué los errores de
+ráfaga son más difíciles de detectar y corregir que los errores simples de bit.
+</p>
+
+<h2>Métodos de detección y corrección</h2>
+
+<p>
+Algunos métodos comunes utilizados para la detección y corrección de errores incluyen:
+</p>
+
+<ul>
+    <li>Bit de paridad (par e impar)</li>
+    <li>Códigos de redundancia cíclica (CRC)</li>
+    <li>Códigos de Hamming</li>
+    <li>Repetición de tramas y retransmisión automática</li>
+</ul>
+
+<p>
+Estos métodos permiten aumentar la confiabilidad de los sistemas de comunicación, aunque a costa
+de un mayor uso del ancho de banda debido a la redundancia añadida.
+</p>
+
+<h2>Fuente de consulta</h2>
+
+<p>
+Información basada en el siguiente recurso educativo:  
+<a href="https://u6dispositivosdecomunicacionitstulum.wordpress.com/2-3-metodos-para-la-deteccion-y-correccion-de-errores/"
+target="_blank">
+Métodos para la detección y corrección de errores – ITST Tulum
+</a>
+</p>
+
+<div class="footer-buttons">
+    <button onclick="location.href='medio.html'">
+        Regresar al Menu de Medios
+    </button>
+</div>
+
+</div>
+</body>
+</html>

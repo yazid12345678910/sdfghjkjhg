@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<title>2.3.1 VRC, LRC y CRC</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor{
+    max-width: 1000px;
+    background: rgba(255,255,255,0.97);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: justify;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+h1, h2, h3{
+    background: linear-gradient(90deg, #003366, #0056b3);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+p{
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 12px;
+}
+ul{
+    margin-left: 20px;
+}
+img{
+    display: block;
+    margin: 20px auto;
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+a{
+    color: #0056b3;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.footer-buttons{
+    margin-top: 30px;
+    text-align: center;
+}
+.footer-buttons button{
+    width: 60%;
+    padding: 12px;
+    background: linear-gradient(90deg, #8b0000, #ff0000);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.footer-buttons button:hover{
+    background: linear-gradient(90deg, #ff0000, #ff6b6b);
+}
+</style>
+</head>
+
+<body>
+<div class="contenedor">
+
+<h1>2.3.1 Verificación de redundancia VRC, LRC y CRC</h1>
+
+<h2>Verificación de Redundancia Vertical (VRC)</h2>
+
+<p>
+La verificación de redundancia vertical (VRC), también conocida como verificación de paridad,
+es uno de los métodos más simples y económicos para la detección de errores en la transmisión
+de datos. En esta técnica se añade un bit adicional, llamado <strong>bit de paridad</strong>,
+al final de cada unidad de datos, de tal forma que el número total de bits con valor 1 sea par
+(paridad par) o impar (paridad impar).
+</p>
+
+<p>
+En la paridad par, si el número de unos en los datos es impar, se agrega un bit de paridad con
+valor 1 para que el total sea par. Si el número de unos ya es par, el bit de paridad será 0.
+</p>
+
+<h3>Funcionamiento del VRC</h3>
+
+<p>
+Por ejemplo, si se desea transmitir el carácter ASCII <strong>“a”</strong> (1100001), este contiene
+3 bits en 1, que es un número impar. Para utilizar paridad par, se añade un bit de paridad con
+valor 1, obteniendo 11100001. El receptor contará los bits y, si el total es par, aceptará los
+datos; de lo contrario, los rechazará.
+</p>
+
+<h3>Prestaciones del VRC</h3>
+
+<ul>
+    <li>Detecta todos los errores de un solo bit.</li>
+    <li>Detecta errores de ráfaga si el número de bits alterados es impar.</li>
+    <li>No detecta errores cuando el número de bits alterados es par.</li>
+</ul>
+
+<h2>Verificación de Redundancia Longitudinal (LRC)</h2>
+
+<p>
+La verificación de redundancia longitudinal (LRC) es una mejora del método VRC. En lugar de
+añadir un bit de paridad por cada carácter, se organiza la información en bloques y se
+agrega una fila adicional de bits de paridad calculados columna por columna.
+</p>
+
+<p>
+Este método permite detectar errores múltiples que el VRC no puede identificar, ya que
+considera el bloque completo de datos. Sin embargo, aún no es completamente confiable para
+errores complejos o múltiples ráfagas largas.
+</p>
+
+<h3>Ventajas del LRC</h3>
+
+<ul>
+    <li>Mayor capacidad de detección que el VRC.</li>
+    <li>Detecta errores de ráfaga más largos.</li>
+    <li>Sigue siendo un método sencillo y de bajo costo.</li>
+</ul>
+
+<h2>Verificación de Redundancia Cíclica (CRC)</h2>
+
+<p>
+La verificación de redundancia cíclica (CRC) es uno de los métodos más robustos y utilizados
+en redes modernas. Se basa en operaciones matemáticas usando aritmética binaria y divisiones
+polinomiales.
+</p>
+
+<p>
+El emisor genera una secuencia de bits de redundancia llamada <strong>checksum</strong> a partir
+de los datos y un polinomio generador. El receptor realiza la misma operación y compara el
+resultado. Si existe alguna discrepancia, se detecta el error.
+</p>
+
+<h3>Características del CRC</h3>
+
+<ul>
+    <li>Detecta errores de un solo bit y múltiples bits.</li>
+    <li>Detecta errores de ráfaga largos.</li>
+    <li>Es ampliamente usado en Ethernet, USB y protocolos de red.</li>
+</ul>
+
+<h2>Diagrama de verificación de errores</h2>
+
+<img src="https://imgv2-1-f.scribdassets.com/img/document/109632426/original/bace044413/1690356171?v=1"
+alt="Diagrama de VRC, LRC y CRC">
+
+<p>
+<strong>Explicación de la imagen:</strong>  
+El diagrama muestra cómo se añaden bits de redundancia a los datos originales para detectar
+errores. En el caso del VRC, se observa un bit adicional por carácter. En el LRC, la redundancia
+se aplica a bloques completos. En el CRC, se utilizan operaciones matemáticas más complejas
+que permiten detectar errores más difíciles de identificar.
+</p>
+
+<h2>Fuente de consulta</h2>
+
+<p>
+Información basada en la siguiente fuente académica:  
+<a href="https://u6dispositivosdecomunicacionitstulum.wordpress.com/2-3-1-verificacion-de-redundancia-vertical/"
+target="_blank">
+Verificación de redundancia vertical – ITST Tulum
+</a>
+</p>
+
+
+<div class="footer-buttons">
+    <button onclick="location.href='medio.html'">
+        Regresar al Menu de Medios
+    </button>
+</div>
+
+</div>
+</body>
+</html>
